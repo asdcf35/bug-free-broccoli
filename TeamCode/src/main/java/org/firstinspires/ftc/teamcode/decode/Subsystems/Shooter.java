@@ -15,36 +15,36 @@ public class Shooter {
 
     public Shooter(HardwareMap hardwareMap) {
         shooter = new MotorEx(hardwareMap, "leftShooterMotor", Motor.GoBILDA.BARE);
-        followerShooter = new MotorEx(hardwareMap, "rightShooterMotor", Motor.GoBILDA.BARE);
+//        followerShooter = new MotorEx(hardwareMap, "rightShooterMotor", Motor.GoBILDA.BARE);
 
-        followerShooter.motor.setDirection(DcMotorSimple.Direction.FORWARD);
+//        followerShooter.motor.setDirection(DcMotorSimple.Direction.FORWARD);
         shooter.motor.setDirection(DcMotorSimple.Direction.REVERSE);
 //forward forward didnt work
         //reverse forward went wrong way
         shooter.setZeroPowerBehavior(Motor.ZeroPowerBehavior.FLOAT);
-        followerShooter.setZeroPowerBehavior(Motor.ZeroPowerBehavior.FLOAT);
+//        followerShooter.setZeroPowerBehavior(Motor.ZeroPowerBehavior.FLOAT);
 
         shooter.resetEncoder();
-        followerShooter.resetEncoder();
+//        followerShooter.resetEncoder();
     }
 
     public void shootArtifacts() {
         shooter.set(1);
-        followerShooter.set(1);
+//        followerShooter.set(1);
     }
 
     public void velocityShooterFar() {
         shooter.setVelocity(FAR_VELOCITY);
-        followerShooter.setVelocity(FAR_VELOCITY);
+//        followerShooter.setVelocity(FAR_VELOCITY);
     }
 
     public void velocityShooterClose() {
         shooter.setVelocity(CLOSE_VELOCITY);
-        followerShooter.setVelocity(CLOSE_VELOCITY);
+//        followerShooter.setVelocity(CLOSE_VELOCITY);
     }
 
     public void stop() {
         shooter.set(0);
-        followerShooter.set(0);
+//        followerShooter.set(0);
     }
 }
