@@ -20,12 +20,8 @@ public class RobotActions {
     }
 
     // LOADER ----------------------------------------------
-    public static Action loaderAction(double power, double timeSeconds) {
-        return new SequentialAction(
-                new InstantAction(() -> robot.loader.setLoaderMotor(power)),
-                new SleepAction(timeSeconds),
-                new InstantAction(() -> robot.loader.stop())
-        );
+    public static Action loaderAction(double position, double timeSeconds) {
+        return new InstantAction(() -> robot.loader.setLoaderPosition(position));
     }
 
     // SHOOTER ---------------------------------------------
